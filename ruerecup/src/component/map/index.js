@@ -28,6 +28,8 @@ const parisBounds = [
 
 const Map = () => {
     const [position, setPosition] = useState([0,0]);
+    const [markers, setMarkers] = useState([]);
+
 
     useEffect(() =>{
 
@@ -43,33 +45,48 @@ const Map = () => {
 
     },[])
 
+    const handleAddMarker = () => {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        const newMarker = {
+          position: [position.coords.latitude, position.coords.longitude],
+        };
+        setMarkers([...markers, newMarker]);
+      });
+    };
+  
+
     return (
-        <MapContainer 
-            style={{ height: "300px", width: "3s00px" }}
-            bounds={parisBounds} 
-            scrollWheelZoom={false}
+      <div>
+      <button onClick={handleAddMarker}>
+        Ajouter un marqueur à ma localisation
+      </button>
+      <MapContainer
+        style={{ height: "300px", width: "300px" }}
+        bounds={parisBounds}
+        scrollWheelZoom={false}
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <Marker position={position} icon={iconFurniture}>
+          <Popup>Déchets</Popup>
+        </Marker>
 
-        >
-            <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            <Marker position={position} icon={iconFurniture}>
-                <Popup>
-                    Paris
-                </Popup>
-            </Marker>
-            
-
-            
-{/*             
-         <Marker position={position} icon={icon}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
-        </Marker> */}
-        </MapContainer>
-    );
-}
+        {/* Affichez tous les marqueurs dans la liste */}
+        {markers.map((marker, index) => (
+          <Marker key={index} position={marker.position} icon={icon}>
+            <Popup>A pretty CSS3 popup. Easily customizable.</Popup>
+          </Marker>
+        ))}
+      </MapContainer>
+    </div>
+  );
+};
 
 export default Map;
+
+
+
+
+
