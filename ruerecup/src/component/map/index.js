@@ -4,6 +4,7 @@ import "leaflet/dist/leaflet.css";
 import { useEffect, useState } from "react";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import marker from '../../assets/furniture.png';
+import './index.css';
 
 
 const icon = L.icon({
@@ -32,24 +33,25 @@ const Map = () => {
 
 
     useEffect(() =>{
-
     setInterval(() => {
         navigator.geolocation.getCurrentPosition(function(position) {
+
             console.log("Latitude is :", position.coords.latitude);
             console.log("Longitude is :", position.coords.longitude);
             setPosition([position.coords.latitude, position.coords.longitude]);
+
           });
-    }, 10000)
+    }, 10000) },[])
 
 
-
-    },[])
 
     const handleAddMarker = () => {
       navigator.geolocation.getCurrentPosition(function (position) {
+
         const newMarker = {
           position: [position.coords.latitude, position.coords.longitude],
         };
+
         setMarkers([...markers, newMarker]);
       });
     };
@@ -57,8 +59,8 @@ const Map = () => {
 
     return (
       <div>
-        <button onClick={handleAddMarker}>
-          Ajouter un marqueur à ma localisation
+        <button onClick={handleAddMarker} class="small-minimal-button"> Signaler
+        <span class="minimal-button-icon">🚩</span>
         </button>
       <MapContainer
         style={{ height: "300px", width: "300px" }}
@@ -72,7 +74,7 @@ const Map = () => {
 
 
 
-        
+
         <Marker position={position} icon={iconFurniture}>
           <Popup>Déchets</Popup>
         </Marker>
@@ -84,7 +86,7 @@ const Map = () => {
           </Marker>
         ))}
       </MapContainer>
-    </div>
+    </div>  
   );
 };
 
