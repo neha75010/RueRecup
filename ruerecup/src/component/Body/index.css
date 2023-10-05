@@ -10,9 +10,13 @@
   }
   
   .App-header {
-    background-color: #abc5b1;
     min-height: 100vh;
     display: flex;
+
+    background-repeat: repeat;
+    background-image: url(../../assets/leaf.png);
+    background-color: #abc5b1;
+
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -33,3 +37,8 @@
     }
   }
   
+
+  .iconback{
+    background-repeat: repeat;
+    background-image: url(../../assets/leaf.png) ;
+  }

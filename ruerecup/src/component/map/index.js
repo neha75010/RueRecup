@@ -57,9 +57,9 @@ const Map = () => {
 
     return (
       <div>
-      <button onClick={handleAddMarker}>
-        Ajouter un marqueur à ma localisation
-      </button>
+        <button onClick={handleAddMarker}>
+          Ajouter un marqueur à ma localisation
+        </button>
       <MapContainer
         style={{ height: "300px", width: "300px" }}
         bounds={parisBounds}
@@ -69,6 +69,10 @@ const Map = () => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+
+
+
+        
         <Marker position={position} icon={iconFurniture}>
           <Popup>Déchets</Popup>
         </Marker>
