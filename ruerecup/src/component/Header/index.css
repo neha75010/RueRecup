@@ -1,0 +1,53 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 6px 10px;
+    width: 100%; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    box-shadow: 10px 0.1px 18px rgb(0, 0, 0);
+  }
+  
+  .header-logo img {
+    max-width: 40px;
+  }
+  
+  .header-title h1 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .header-login button {
+    background-color: #bed88f;
+    color: black;
+    border: solid black 1px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 1.5em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   box-shadow:  rgba(0, 0, 0, 0.75) 0px 1px 5px;
+
+  }
+  
+  .header-login button:hover {
+    background-color: #bed88f;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
