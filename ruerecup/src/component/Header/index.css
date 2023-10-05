@@ -22,18 +22,32 @@
   }
   
   .header-login button {
-    background-color: #7ce283;
-    color: white;
-    border: none;
+    background-color: #bed88f;
+    color: black;
+    border: solid black 1px;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
     margin-right: 1.5em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   box-shadow:  rgba(0, 0, 0, 0.75) 0px 1px 5px;
 
   }
   
   .header-login button:hover {
-    background-color: #0056b3;
+    background-color: #bed88f;
   }
   
+
+
+
+
+
+
+
+
+
+
+
+

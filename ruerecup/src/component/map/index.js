@@ -9,19 +9,24 @@ import './index.css';
 
 const icon = L.icon({
     iconUrl: marker,
+
     iconSize: [16, 16],
+
     iconAnchor: [12, 41],
     popupAnchor: [0, -41]
+
   });
 
   const iconFurniture = L.icon({
     iconUrl: marker,
+
     iconSize: [40, 40],
+
     iconAnchor: [12, 41],
     popupAnchor: [0, -41]
   });
 
-
+// Coordonnées de Paris
 const parisBounds = [
   [48.815573, 2.224199], // Coordonnée sud-ouest
   [48.902145, 2.469920]  // Coordonnée nord-est
@@ -29,6 +34,7 @@ const parisBounds = [
 
 const Map = () => {
     const [position, setPosition] = useState([0,0]);
+
     const [markers, setMarkers] = useState([]);
 
 
@@ -38,6 +44,7 @@ const Map = () => {
 
             console.log("Latitude is :", position.coords.latitude);
             console.log("Longitude is :", position.coords.longitude);
+
             setPosition([position.coords.latitude, position.coords.longitude]);
 
           });
@@ -59,18 +66,18 @@ const Map = () => {
 
     return (
       <div>
+
         <button onClick={handleAddMarker} class="small-minimal-button"> Signaler
         <span class="minimal-button-icon">🚩</span>
         </button>
+
       <MapContainer
-        style={{ height: "300px", width: "300px" }}
+        style={{ height: "300px", width: "300px", borderRadius: "30px", border: "solid 2px black", margin: "auto", boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)"}}
         bounds={parisBounds}
-        scrollWheelZoom={false}
-      >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
+        scrollWheelZoom={false}>
+
+        <TileLayer attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
 
 
@@ -79,11 +86,11 @@ const Map = () => {
           <Popup>Déchets</Popup>
         </Marker>
 
-        {/* Affichez tous les marqueurs dans la liste */}
         {markers.map((marker, index) => (
           <Marker key={index} position={marker.position} icon={icon}>
             <Popup>A pretty CSS3 popup. Easily customizable.</Popup>
           </Marker>
+          
         ))}
       </MapContainer>
     </div>  

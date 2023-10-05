@@ -1,12 +1,13 @@
 import './index.css';
 import React from "react";
+import logoo from '../../assets/logoo.png';
 
 function Header() {
   return (
     <header className="header">
 
       <div className="header-logo">
-      <img src="../../assets/leaf.png" alt="Logo RueRecup" />
+      <img src={logoo} alt="Logo RueRecup" />
       </div>
 
       <div className="header-title">
