@@ -15,7 +15,6 @@ const Body = (props) => {
 
     return(
         <body className="App-header">
-          
             <div className="iconback"></div>
 
           <Header></Header>
@@ -23,18 +22,14 @@ const Body = (props) => {
            <Map
              conteneurs={conteneurs} 
              ajouterConteneur={ajouterConteneur}
-           >
-          
-
-           </Map>
+           > </Map>
 
         <Tickets></Tickets>
 
         <Addcont
         conteneurs={conteneurs}
         ajouterConteneur={ajouterConteneur}
-        ></Addcont>
-
+        >  </Addcont>
       </body>
     )
 }

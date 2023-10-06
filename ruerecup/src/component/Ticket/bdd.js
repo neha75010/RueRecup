@@ -1,6 +1,3 @@
-// Pour mon Local ne pas preter attention TODO
-
-
 const mysql = require("mysql2");
 
 

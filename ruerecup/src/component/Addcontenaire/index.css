@@ -91,7 +91,6 @@
   
   }
   
-  /* Style de base pour le select */
   select {
       padding: 0.1em;
       border: 2px solid #333333;
@@ -105,27 +104,23 @@
       margin-right: 0.6em;
     }
     
-    /* Style au survol du select */
     select:hover {
-      border-color: #007bff; /* Couleur au survol */
+      border-color: #007bff;
     }
     
-    /* Style lorsque le select est activé (clic) */
     select:focus {
-      border-color: #007bff; /* Couleur lorsque le select est actif */
-      box-shadow: 0 0 3px 0 rgba(0, 123, 255, 0.5); /* Ombre légère */
+      border-color: #007bff; 
+      box-shadow: 0 0 3px 0 rgba(0, 123, 255, 0.5); 
     }
     
-    /* Style pour les options du select */
     select option {
       background-color: white;
       color: #333;
       font-size: 16px;
     }
     
-    /* Style pour la flèche du select (indicateur) */
     select::after {
-      content: "\25BC"; /* Code Unicode pour une flèche vers le bas */
+      content: "\25BC"; 
       position: absolute;
       top: 50%;
       right: 10px;
