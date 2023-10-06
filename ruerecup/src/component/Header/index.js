@@ -28,18 +28,18 @@ function Header() {
         <button onClick={openPopup}>Login</button>
       </div>
 
-      {/* La popup de connexion */}
       {isPopupVisible && (
         <div className="popup">
           <div className="popup-content">
             <span className="close header-login" onClick={closePopup}>&times;</span>
             <h2>Login</h2>
+
             <form>
-              {/* Ajoutez ici les champs de votre formulaire */}
               <input type="text" placeholder="Nom d'utilisateur" required />
               <input type="password" placeholder="Mot de passe" required />
               <button type="submit">Se connecter</button>
             </form>
+            
           </div>
         </div>
       )}
