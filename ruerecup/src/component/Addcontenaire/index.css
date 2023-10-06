@@ -1,0 +1,136 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #bed88f;
+    padding: 0.3em;
+    border: 2px solid #333333;
+    border-radius: 5px;
+    margin-top: 10px;
+   box-shadow:  rgba(0, 0, 0, 0.75) 0px 1px 5px;
+  }
+  
+  .left, .middle, .right {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .box-list {
+    background-color: #bed88f;
+    padding: 10px;
+    border: 2px solid #bed88f;
+    border-radius: 5px;
+    margin-bottom: 10px; 
+  }
+  
+  
+  input[type="text"] {
+    padding: 0.1em;
+    border: 2px solid #333333;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333333;
+    transition: border-color 0.3s;
+  }
+  
+  
+  input[type="text"]:focus {
+    border-color: #007bff; 
+    outline: none; 
+  }
+  
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 16px;
+    color: #333333;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s;
+  }
+  
+  
+  nav ul li::before {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: transparent;
+    border: 2px solid #333333;
+    border-radius: 50%;
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  nav ul li:hover {
+    color: #007bff; 
+  }
+  
+  
+  nav ul li:hover::before {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  
+  
+  imgticket {
+    max-width: 100%;
+    height: auto;
+    margin: 10px;
+  
+  }
+  
+  /* Style de base pour le select */
+  select {
+      padding: 0.1em;
+      border: 2px solid #333333;
+      border-radius: 5px;
+      font-size: 16px;
+      color: #333333;
+      transition: border-color 0.3s;
+      transition: border-color 0.3s ease-in-out;
+      margin-left: 0.5em;
+      margin-bottom: 0.1em;
+      margin-right: 0.6em;
+    }
+    
+    /* Style au survol du select */
+    select:hover {
+      border-color: #007bff; /* Couleur au survol */
+    }
+    
+    /* Style lorsque le select est activé (clic) */
+    select:focus {
+      border-color: #007bff; /* Couleur lorsque le select est actif */
+      box-shadow: 0 0 3px 0 rgba(0, 123, 255, 0.5); /* Ombre légère */
+    }
+    
+    /* Style pour les options du select */
+    select option {
+      background-color: white;
+      color: #333;
+      font-size: 16px;
+    }
+    
+    /* Style pour la flèche du select (indicateur) */
+    select::after {
+      content: "\25BC"; /* Code Unicode pour une flèche vers le bas */
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      font-size: 14px;
+      pointer-events: none;
+    }
+    

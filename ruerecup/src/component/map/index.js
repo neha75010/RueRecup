@@ -32,7 +32,7 @@ const parisBounds = [
   [48.902145, 2.469920]  // Coordonnée nord-est
 ];
 
-const Map = () => {
+const Map = ({ conteneurs, ajouterConteneur}) => {
     const [position, setPosition] = useState([0,0]);
 
     const [markers, setMarkers] = useState([]);
@@ -48,7 +48,7 @@ const Map = () => {
             setPosition([position.coords.latitude, position.coords.longitude]);
 
           });
-    }, 10000) },[])
+    }, 1000000) },[])
 
 
 
@@ -65,9 +65,16 @@ const Map = () => {
   
 
     return (
+
+
+
+
+      
       <div>
 
-        <button onClick={handleAddMarker} class="small-minimal-button"> Signaler
+        <button onClick={() =>{handleAddMarker()
+        ajouterConteneur()
+        }} class="small-minimal-button"> Signaler
         <span class="minimal-button-icon">🚩</span>
         </button>
 
